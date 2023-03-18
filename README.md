@@ -35,7 +35,7 @@ The function is implemented using the os.clock and os.time functions, which are 
 
 ## Bug Reports and Feature Requests
 
-If you encounter any bugs or issues with the Wait function, or have a suggestion for a new feature, please feel free to submit a bug report or feature request on the GitHub Issues page.
+If you encounter any bugs or issues with the Wait function, or have a suggestion for a new feature, please feel free to submit a bug report or feature request on the https://github.com/fsdfdfgdfghSD/Wait-function-for-Lua/issues page.
 
 When submitting a bug report or feature request, please include as much detail as possible, such as:
 
