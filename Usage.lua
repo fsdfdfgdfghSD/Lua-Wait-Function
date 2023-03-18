@@ -12,9 +12,9 @@ print("World!")
 
 local function MyFunction()
   print("Function started")
-  Wait(2)
+  WaitFunction(2)
   print("Function resumed")
-  Wait(3)
+  WaitFunction(3)
   print("Function finished")
 end
 
@@ -27,5 +27,5 @@ print("End")
 print("Click enter to continue!")
 
 io.read() -- Detect if the user hits enter
-Wait(2)
+WaitFunction(2)
 print("Two seconds have passed!")
