@@ -1,14 +1,14 @@
--- Some examples of how you can use the Wait() function
+-- Three examples of how you can use the Wait() function
 
 local WaitFunction = require("path-to-module")
 
--- >> First Example
+-- >> First Example << --
 
 print("Hello")
 WaitFunction(1) -- Wait a certain amount of time
 print("World!")
 
--- >> Second Example
+-- >> Second Example << --
 
 function MyCoroutine()
   print("Coroutine started")
@@ -20,7 +20,7 @@ end
 
 coroutine.wrap(MyCoroutine)()
 
--- >> Third Example
+-- >> Third Example << --
 
 local function WaitForInputWithinTimeLimit()
   local Timeout = 5 -- wait for input for 5 seconds
