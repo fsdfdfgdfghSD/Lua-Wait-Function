@@ -1,9 +1,9 @@
 local socket = require("path-to-module")
 
 -- Wait function that pauses execution for a specified amount of time
--- @param time (number) The amount of time to wait in seconds
--- @param multiplier (number) Optional multiplier for the wait time. Default is 1.
--- @return (boolean) True if the wait time was successful, false otherwise.
+
+-- Time (number) The amount of time to wait in seconds
+-- Multiplier (number) Optional multiplier for the wait time. Default is 1.
 local function Wait(Time, Multiplier)
   Multiplier = Multiplier or 1
 
