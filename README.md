@@ -49,4 +49,4 @@ When submitting a bug report or feature request, please include as much detail a
 
 ## Contributions
 
-Contributions to this project are welcome! If you have ideas for improvements or bug fixes, feel free to create a pull request.
+Contributions to this project are welcome! If you have ideas for improvements or bug fixes, feel free to create a pull request here! https://github.com/fsdfdfgdfghSD/Wait-function-for-Lua/pulls.
