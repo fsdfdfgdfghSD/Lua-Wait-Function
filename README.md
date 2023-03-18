@@ -1,19 +1,38 @@
 # Wait-function-for-Lua
 
-**Introduction:**
+A simple function that allows you to wait for a specified amount of time in Lua.
 
-The Wait function for Lua is a simple utility function that allows you to pause execution of your Lua code for a specified amount of time. This can be useful in situations where you want to delay some action or wait for a certain event to occur before continuing with your code.
+## Introduction
 
-**How it works:**
+This function provides a simple way to pause the execution of a Lua script for a specified amount of time. It can be useful in situations where you need to delay the execution of some code, for example, to create animations, control the rate of execution of a loop, or wait for a response from an external system.
 
-The Wait function works by checking whether the time delay you've specified is small enough to use the os.clock function for accurate timing, or whether it's larger and requires the use of the coroutine.yield function. It then uses either the os.clock or coroutine.yield function to pause the execution of your code until the specified time has elapsed.
+## Installation
 
-**Limitations and known issues:**
+To use the `Wait` function in your Lua script, simply copy the code from the Wait.lua file into your project.
 
-One limitation of the Wait function is that it blocks the entire Lua state during the wait period, which can cause issues if you're running multiple coroutines or have other time-sensitive code that needs to run concurrently. Additionally, the function can be affected by changes in system clock time, which can cause unexpected results if your code is running for long periods of time.
+## Usage
 
-**How to use it:**
+To use the `Wait` function, simply call it with the number of seconds you want to wait:
 
-https://github.com/fsdfdfgdfghSD/Wait-function-for-Lua/blob/main/Usage.lua
+```lua
+Wait(2) -- waits for 2 seconds
+```
 
-Overall, the Wait function can be a useful tool in certain situations, but it's important to use it carefully and be aware of its limitations.
+The function will block the execution of the Lua script for the specified amount of time, then continue.
+
+If you call the function with a negative number or a non-number value, it will raise an error:
+
+```lua
+Wait(-1) -- raises an error
+Wait("hello") -- raises an error
+```
+
+## Limitations and known issues
+
+The `Wait` function is designed to work with Lua 5.1 and later versions. It may not work with earlier versions of Lua or with other Lua implementations.
+
+The function is implemented using the `os.clock` and `os.time` functions, which are not precise on all platforms. This means that the actual waiting time may be longer or shorter than the specified time, especially for short waiting times. In addition, the function may consume a lot of CPU resources when waiting for very short times, as it uses a busy-wait loop.
+
+## Contributions
+
+Contributions to this project are welcome! If you have ideas for improvements or bug fixes, feel free to create a pull request.
