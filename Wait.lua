@@ -4,7 +4,7 @@
 local function Wait(Time)
     -- The following code block checks if the Time argument is a number and is non-negative. If either of these conditions is not met, an error is thrown.
     if type(Time) ~= "number" or Time < 0 then
-        error("Wait function expects a non-negative number as its argument")
+        error("Wait function expects a non-negative number as its argument is: "..tostring(Time), 2)
     end
 
     -- If the specified time is less than 0.01 seconds, a busy-wait loop is used to wait for the time to pass.
