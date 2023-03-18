@@ -2,7 +2,9 @@
 -- @param Time (number) The amount of time to wait in seconds
 local function Wait(Time)
   -- Ensure that the input is valid (non-negative number)
-  assert(type(Time) == "number" and Time >= 0, "Invalid wait time")
+  if type(Time) ~= "number" or Time < 0 then
+    error("Wait function expects a non-negative number as its argument is: "..tostring(Time), 2)
+  end
 
   -- If the specified wait time is less than 0.01 seconds, use a busy loop to wait
   if Time < 0.01 then
