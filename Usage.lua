@@ -5,37 +5,27 @@ local WaitFunction = require("path-to-module")
 -- >> First Example << --
 
 print("Hello")
-WaitFunction(1) -- Wait a certain amount of time
+WaitFunction(1)
 print("World!")
 
 -- >> Second Example << --
 
-function MyCoroutine()
-  print("Coroutine started")
+local function MyFunction()
+  print("Function started")
   Wait(2)
-  print("Coroutine resumed")
+  print("Function resumed")
   Wait(3)
-  print("Coroutine finished")
+  print("Function finished")
 end
 
-coroutine.wrap(MyCoroutine)()
+print("Start")
+MyFunction()
+print("End")
 
 -- >> Third Example << --
 
-local function WaitForInputWithinTimeLimit()
-  local Timeout = 5 -- wait for input for 5 seconds
-  local Start = os.time()
-  
-  while os.time() - Start < Timeout do
-    local Input = io.read()
-    if Input then
-      print("Input received:", Input)
-      return
-    end
-    Wait(0.1) -- wait for a short time before checking again
-  end
-  
-  print("Input not received within time limit")
-end
+print("Click enter to continue!")
 
-WaitForInputWithinTimeLimit()
+io.read() -- Detect if the user hits enter
+Wait(2)
+print("Two seconds have passed!")
