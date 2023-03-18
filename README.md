@@ -12,7 +12,7 @@ The Wait function works by checking whether the time delay you've specified is s
 
 One limitation of the Wait function is that it blocks the entire Lua state during the wait period, which can cause issues if you're running multiple coroutines or have other time-sensitive code that needs to run concurrently. Additionally, the function can be affected by changes in system clock time, which can cause unexpected results if your code is running for long periods of time.
 
-**Usage:**
+**How to use it:**
 
 https://github.com/fsdfdfgdfghSD/Wait-function-for-Lua/blob/main/Usage.lua
 
