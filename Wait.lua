@@ -1,26 +1,45 @@
+local socket = require("path-to-module")
+
 -- Wait function that pauses execution for a specified amount of time
--- @param Time (number) The amount of time to wait in seconds
-local function Wait(Time)
+-- @param time (number) The amount of time to wait in seconds
+-- @param multiplier (number) Optional multiplier for the wait time. Default is 1.
+-- @return (boolean) True if the wait time was successful, false otherwise.
+local function Wait(time, multiplier)
+  multiplier = multiplier or 1
+
   -- Ensure that the input is valid (non-negative number)
-  if type(Time) ~= "number" or Time < 0 then
-    error("Wait function expects a non-negative number as its argument is: "..tostring(Time), 2)
+  if type(time) ~= "number" or time < 0 then
+    error("Wait function expects a non-negative number as its argument.", 2)
   end
 
+  local waitTime = time * multiplier
+
   -- If the specified wait time is less than 0.01 seconds, use a busy loop to wait
-  if Time < 0.01 then
-    local Start = os.clock()
-    while os.clock() - Start < Time do end
-    return
+  if waitTime < 0.01 then
+    local start = socket.gettime()
+    while socket.gettime() - start < waitTime do end
+    return true
   end
 
   -- If coroutine is running, use coroutine.yield() to wait
   if coroutine.running() then
-    local Start = os.clock()
-    repeat coroutine.yield() until os.clock() - Start >= Time
+    local start = socket.gettime()
+    repeat
+      local success, errorMsg = coroutine.resume(coroutine.running(), waitTime)
+      if not success then
+        error("Error during coroutine wait: " .. errorMsg, 2)
+      end
+    until socket.gettime() - start >= waitTime
   else
     -- If coroutine is not running, use os.time() to wait
-    local Start = os.time()
+    local start = os.time()
     repeat
-    until os.time() - Start >= Time
+      local now = os.time()
+      if now < start then
+        error("System clock went backwards during wait.", 2)
+      end
+    until now - start >= waitTime
   end
+
+  return true
 end
