@@ -8,7 +8,7 @@ This function provides a simple way to pause the execution of a Lua script for a
 
 ## Installation
 
-To use the `Wait` function in your Lua script, simply copy the code from the Wait.lua file into your project.
+To use the `Wait` function in your Lua script, simply copy the code from the `Wait.lua` file into your project.
 
 ## Usage
 
