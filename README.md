@@ -1,6 +1,6 @@
 # Wait-function-for-Lua
 
-A simple function that allows you to wait for a specified amount of time in Lua and Roblox Lua.
+A simple function that allows you to wait for a specified amount of time in **Lua** and **Roblox Lua.**
 
 ## Introduction
 
