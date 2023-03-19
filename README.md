@@ -1,6 +1,6 @@
 # Wait-function-for-Lua
 
-A simple function that allows you to wait for a specified amount of time in Lua.
+A simple function that allows you to wait for a specified amount of time in Lua and Roblox Lua.
 
 ## Introduction
 
@@ -30,7 +30,6 @@ Wait("hello") -- raises an error
 ## Limitations and known issues
 
 The `Wait` function is designed to work with Lua 5.1 and later versions. It may not work with earlier versions of Lua or with other Lua implementations.
-The `Wait` function is designed to work with Roblox Lua too.
 
 The function is implemented using the os.clock and os.time functions, which are not precise on all platforms. This means that the actual waiting time may be longer or shorter than the specified time, especially for short waiting times. In addition, the function may consume a lot of CPU resources when waiting for very short times, as it uses a busy-wait loop.
 
